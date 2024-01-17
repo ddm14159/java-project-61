@@ -15,3 +15,7 @@
 - GCD<br />
   https://imgur.com/a/wkGig47
   <br />
+
+- Progression<br />
+  https://imgur.com/a/VfWoqsf
+  <br />
