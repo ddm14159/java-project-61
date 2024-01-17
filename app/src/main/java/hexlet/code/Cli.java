@@ -6,7 +6,7 @@ public class Cli {
     public static void greet() {
         String welcomeMessage = "Welcome to the Brain Games!";
         String nameQuestion = "May I have your name?";
-        String greeting = "Hello, %s!";
+        String greeting = "Hello, %s!\n";
 
         Scanner scan = new Scanner(System.in);
 
