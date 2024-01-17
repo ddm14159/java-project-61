@@ -1,4 +1,4 @@
-package hexlet.code.games;
+package hexlet.code;
 
 public class Helper {
     public static int getRandomNumber(int min, int max) {
