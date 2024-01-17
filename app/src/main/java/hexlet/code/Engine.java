@@ -13,9 +13,10 @@ public class Engine {
     private static final String QUESTION = "Question: ";
     private static final String ANSWER = "Your answer: ";
     private static final String APPROVE = "Correct!";
-    private static final String REJECT = "Let's try again, %s!\n";
+    private static final String REJECT = "'%s' is wrong answer ;(. Correct answer was '%s'.\n";
+    private static final String TRY_AGAIN = "Let's try again, %s!\n";
     private static final String CONGRATULATION = "Congratulations, %s!\n";
-    
+
     public static void run(String description, String[][] data) {
         Scanner scan = new Scanner(System.in);
 
@@ -32,7 +33,8 @@ public class Engine {
             String userAnswer = scan.nextLine();
 
             if (!userAnswer.equals(data[round][ANSWER_INDEX])) {
-                System.out.printf(REJECT, userName);
+                System.out.printf(REJECT, userAnswer, data[round][ANSWER_INDEX]);
+                System.out.printf(TRY_AGAIN, userName);
                 return;
             }
 
