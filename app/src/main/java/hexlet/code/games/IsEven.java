@@ -12,24 +12,22 @@ public class IsEven {
         return x % 2 == 0;
     }
 
-    private static String[] generateData() {
-        var data = new String[2];
+    private static String[][] generateData() {
+        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
 
-        int num = Helper.getRandomNumber(MIN, MAX);
-        String answer = isEven(num) ? "yes" : "no";
+        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
+            int num = Helper.getRandomNumber(MIN, MAX);
+            String answer = isEven(num) ? "yes" : "no";
 
-        data[Engine.QUESTION_INDEX] = Integer.toString(num);
-        data[Engine.ANSWER_INDEX] = answer;
+            data[round][Engine.QUESTION_INDEX] = Integer.toString(num);
+            data[round][Engine.ANSWER_INDEX] = answer;
+        }
 
         return data;
     }
 
     public static void play() {
-        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
-
-        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
-            data[round] = generateData();
-        }
+        String[][] data = generateData();
 
         Engine.run(DESCRIPTION, data);
     }
