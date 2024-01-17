@@ -19,3 +19,7 @@
 - Progression<br />
   https://imgur.com/a/VfWoqsf
   <br />
+
+- Prime number<br />
+  https://imgur.com/a/Moo0ulT
+  <br />
