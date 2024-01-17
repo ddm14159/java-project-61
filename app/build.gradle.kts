@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    application
 }
 
 group = "hexlet.code"
@@ -9,9 +10,17 @@ repositories {
     mavenCentral()
 }
 
+application {
+    mainClass = "hexlet.code.App"
+}
+
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.compileJava {
+    options.release.set(20)
 }
 
 tasks.test {
