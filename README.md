@@ -3,7 +3,17 @@
 
 <a href="https://codeclimate.com/github/ddm14159/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/76ae94085c0e9a7c5def/maintainability" /></a>
 
-## Screenshots
+### Games:
+* Even - determine if a number is even.
+* Calculator - calculate arithmetic expressions.
+* GCD - determine the greatest common divisor.
+* Progression - find missing number in a sequence of numbers.
+* Prime - determine if a number is prime.
+
+### Run:
+    ./build/install/app/bin/app 
+
+### Screenshots
 - Parity check<br />
   https://imgur.com/a/rHQkIoC
   <br />
