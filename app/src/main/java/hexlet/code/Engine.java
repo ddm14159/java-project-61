@@ -15,6 +15,7 @@ public class Engine {
     private static final String APPROVE = "Correct!";
     private static final String REJECT = "Let's try again, %s!\n";
     private static final String CONGRATULATION = "Congratulations, %s!\n";
+    
     public static void run(String description, String[][] data) {
         Scanner scan = new Scanner(System.in);
 
