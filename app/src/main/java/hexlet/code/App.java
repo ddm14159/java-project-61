@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.IsEven;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class App {
     private static final String OPTION_GREET = "Greet";
     private static final String OPTION_IS_EVEN = "Even";
     private static final String OPTION_CALCULATOR = "Calculator";
+    private static final String OPTION_GCD = "GCD";
     private static final String OPTION_EXIT = "Exit";
     private static final String LINE_SEPARATOR = "\n";
 
@@ -20,6 +22,7 @@ public class App {
                 "1 - " + OPTION_GREET + LINE_SEPARATOR
               + "2 - " + OPTION_IS_EVEN + LINE_SEPARATOR
               + "3 - " + OPTION_CALCULATOR + LINE_SEPARATOR
+              + "4 - " + OPTION_GCD + LINE_SEPARATOR
               + "0 - " + OPTION_EXIT + LINE_SEPARATOR
         );
 
@@ -35,6 +38,9 @@ public class App {
                 break;
             case "3":
                 Calculator.play();
+                break;
+            case "4":
+                Gcd.play();
                 break;
             case "0":
             default:

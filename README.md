@@ -11,3 +11,7 @@
 - Calculator<br />
   https://imgur.com/a/wVqtqk8
   <br />
+
+- GCD<br />
+  https://imgur.com/a/wkGig47
+  <br />
