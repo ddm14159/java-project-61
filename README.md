@@ -5,5 +5,9 @@
 
 ## Screenshots
 - Parity check<br />
-  https://imgur.com/a/BCmkAHM
+  https://imgur.com/a/rHQkIoC
+  <br />
+
+- Calculator<br />
+  https://imgur.com/a/wVqtqk8
   <br />
