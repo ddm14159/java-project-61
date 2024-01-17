@@ -23,6 +23,7 @@ public class IsEven {
 
         return data;
     }
+
     public static void play() {
         var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
 
