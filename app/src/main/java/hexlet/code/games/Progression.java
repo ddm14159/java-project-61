@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Helper;
 
-import java.util.Arrays;
-
 public class Progression {
     private static final String DESCRIPTION = "What number is missing in the progression?";
     private static final int PROGRESSION_LENGTH = 10;
