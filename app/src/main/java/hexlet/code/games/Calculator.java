@@ -15,7 +15,7 @@ public class Calculator {
         int num1 = Helper.getRandomNumber(MIN, MAX);
         int num2 = Helper.getRandomNumber(MIN, MAX);
         String operator = Helper.getRandomArrayElement(OPERATORS);
-        String answer = calculate(num1, num2, operator);
+        String answer = Integer.toString(calculate(num1, num2, operator));
 
         data[Engine.QUESTION_INDEX] = num1 + operator + num2;
         data[Engine.ANSWER_INDEX] = answer;
@@ -23,12 +23,12 @@ public class Calculator {
         return data;
     }
 
-    private static String calculate(int num1, int num2, String operator) {
+    private static int calculate(int num1, int num2, String operator) {
         return switch (operator) {
-            case " + " -> Integer.toString(num1 + num2);
-            case " - " -> Integer.toString(num1 - num2);
-            case " * " -> Integer.toString(num1 * num2);
-            default -> null;
+            case " + " -> num1 + num2;
+            case " - " -> num1 - num2;
+            case " * " -> num1 * num2;
+            default -> throw new IllegalArgumentException("Operator must be one of:" + String.join(",", OPERATORS));
         };
     }
 
