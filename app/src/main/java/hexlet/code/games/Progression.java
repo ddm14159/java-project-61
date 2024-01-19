@@ -10,20 +10,18 @@ public class Progression {
     private static final int MAX = 10;
     private static final String HIDDEN = "..";
 
-    private static String[][] generateData() {
-        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
+    private static String[] generateData() {
+        var data = new String[Engine.ELEMENTS_FOR_ROUND_AMOUNT];
 
-        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
-            int firstNumber = Helper.getRandomNumber(MIN, MAX);
-            int step = Helper.getRandomNumber(MIN, MAX);
-            int controlIndex = Helper.getRandomNumber(0, PROGRESSION_LENGTH - 1);
-            String[] progression = getProgression(firstNumber, step);
-            String answer = progression[controlIndex];
-            progression[controlIndex] = HIDDEN;
+        int firstNumber = Helper.getRandomNumber(MIN, MAX);
+        int step = Helper.getRandomNumber(MIN, MAX);
+        int controlIndex = Helper.getRandomNumber(0, PROGRESSION_LENGTH - 1);
+        String[] progression = getProgression(firstNumber, step);
+        String answer = progression[controlIndex];
+        progression[controlIndex] = HIDDEN;
 
-            data[round][Engine.QUESTION_INDEX] = String.join(" ", progression);
-            data[round][Engine.ANSWER_INDEX] = answer;
-        }
+        data[Engine.QUESTION_INDEX] = String.join(" ", progression);
+        data[Engine.ANSWER_INDEX] = answer;
 
         return data;
     }
@@ -43,7 +41,11 @@ public class Progression {
     }
 
     public static void play() {
-        String[][] data = generateData();
+        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
+
+        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
+            data[round] = generateData();
+        }
 
         Engine.run(DESCRIPTION, data);
     }

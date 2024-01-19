@@ -8,17 +8,15 @@ public class Gcd {
     private static final int MIN = 1;
     private static final int MAX = 100;
 
-    private static String[][] generateData() {
-        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
+    private static String[] generateData() {
+        var data = new String[Engine.ELEMENTS_FOR_ROUND_AMOUNT];
 
-        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
-            int num1 = Helper.getRandomNumber(MIN, MAX);
-            int num2 = Helper.getRandomNumber(MIN, MAX);
-            String answer = Integer.toString(calculate(num1, num2));
+        int num1 = Helper.getRandomNumber(MIN, MAX);
+        int num2 = Helper.getRandomNumber(MIN, MAX);
+        String answer = Integer.toString(calculate(num1, num2));
 
-            data[round][Engine.QUESTION_INDEX] = num1 + " " + num2;
-            data[round][Engine.ANSWER_INDEX] = answer;
-        }
+        data[Engine.QUESTION_INDEX] = num1 + " " + num2;
+        data[Engine.ANSWER_INDEX] = answer;
 
         return data;
     }
@@ -37,7 +35,11 @@ public class Gcd {
     }
 
     public static void play() {
-        String[][] data = generateData();
+        var data = new String[Engine.ROUNDS_AMOUNT][Engine.ELEMENTS_FOR_ROUND_AMOUNT];
+
+        for (var round = 0; round < Engine.ROUNDS_AMOUNT; round++) {
+            data[round] = generateData();
+        }
 
         Engine.run(DESCRIPTION, data);
     }
