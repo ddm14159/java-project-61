@@ -16,7 +16,7 @@ public class Progression {
         int firstNumber = Helper.getRandomNumber(MIN, MAX);
         int step = Helper.getRandomNumber(MIN, MAX);
         int controlIndex = Helper.getRandomNumber(0, PROGRESSION_LENGTH - 1);
-        String[] progression = getProgression(firstNumber, step);
+        String[] progression = getProgression(firstNumber, step, PROGRESSION_LENGTH);
         String answer = progression[controlIndex];
         progression[controlIndex] = HIDDEN;
 
@@ -26,15 +26,11 @@ public class Progression {
         return data;
     }
 
-    private static String[] getProgression(int firstNumber, int step) {
-        var progression = new String[PROGRESSION_LENGTH];
-        var i = 0;
-        var j = firstNumber;
+    private static String[] getProgression(int firstNumber, int step, int length) {
+        var progression = new String[length];
 
-        while (i < PROGRESSION_LENGTH) {
-            progression[i] = Integer.toString(j);
-            i++;
-            j += step;
+        for (int i = 0; i < length; i += 1) {
+            progression[i] = Integer.toString(firstNumber + i * step);
         }
 
         return progression;
