@@ -13,7 +13,7 @@ public class Gcd {
 
         int num1 = Helper.getRandomNumber(MIN, MAX);
         int num2 = Helper.getRandomNumber(MIN, MAX);
-        String answer = Integer.toString(calculate(num1, num2));
+        String answer = Integer.toString(calculateGcd(num1, num2));
 
         data[Engine.QUESTION_INDEX] = num1 + " " + num2;
         data[Engine.ANSWER_INDEX] = answer;
@@ -21,7 +21,10 @@ public class Gcd {
         return data;
     }
 
-    private static int calculate(int num1, int num2) {
+    private static int calculateGcd(int num1, int num2) {
+        if (num1 == 0 || num2 == 0) {
+            throw new IllegalArgumentException("Numbers must be greater than 0");
+        }
 
         while (num1 != num2) {
             if (num1 > num2) {
