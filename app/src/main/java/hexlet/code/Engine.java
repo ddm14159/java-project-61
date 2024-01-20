@@ -9,7 +9,7 @@ public class Engine {
     public static final int ANSWER_INDEX = 1;
     private static final String WELCOME_MESSAGE = "Welcome to the Brain Games!";
     private static final String NAME_QUESTION = "May I have your name?";
-    public static final String GREETING = "Hello, %s!\n";
+    private static final String GREETING = "Hello, %s!\n";
     private static final String QUESTION = "Question: ";
     private static final String ANSWER = "Your answer: ";
     private static final String APPROVE = "Correct!";
